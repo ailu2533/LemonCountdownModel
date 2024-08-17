@@ -1,0 +1,273 @@
+{
+    "background": "#efeeef",
+    "phases": [
+        {
+            "background": {
+                "backgroundColor": "#D3D2D0",
+                "id": "445A350C-91F1-456E-9F72-8C639729BFA4",
+                "kind": 0,
+                "linearGradient": [
+                    "#a1ffce",
+                    "#faffd1"
+                ]
+            },
+            "eventInfo": [],
+            "id": "3462B38A-DD02-4590-8C06-F80D63E3A595",
+            "kind": 3,
+            "phaseTimeRule": {
+                "beginTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "endTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": true,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "phaseTimeKind": 1
+            },
+            "stickers": [],
+            "texts": [
+                {
+                    "colorHex": "#ae2121",
+                    "fontName": "ChillRoundFBold",
+                    "fontSize": 100,
+                    "id": "53CB6F69-D14A-4FCE-B32F-210FEB36B0F9",
+                    "posX": 79,
+                    "posY": 79,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "text": "卷",
+                    "zIndex": 1
+                }
+            ]
+        }
+    ],
+    "phasesAfterStartDate": [
+        {
+            "background": {
+                "backgroundColor": "#D3D2D0",
+                "id": "470DCE32-CE38-48DF-9B8A-FD2A712038F5",
+                "kind": 0,
+                "linearGradient": [
+                    "#a1ffce",
+                    "#faffd1"
+                ]
+            },
+            "eventInfo": [],
+            "id": "F34EEE19-57D3-4880-A5E1-9CC1A07D673A",
+            "kind": 5,
+            "phaseTimeRule": {
+                "beginTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "endTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "phaseTimeKind": 1
+            },
+            "stickers": [],
+            "texts": [
+                {
+                    "colorHex": "#00bfff",
+                    "fontName": "ChillRoundFBold",
+                    "fontSize": 100,
+                    "id": "A882E07A-A498-4A2E-ABAB-71F4CAF9F2C1",
+                    "posX": 79,
+                    "posY": 79,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "text": "躺",
+                    "zIndex": 1
+                }
+            ]
+        }
+    ],
+    "phasesBeforeStartDate": [
+        {
+            "background": {
+                "backgroundColor": "#D3D2D0",
+                "id": "85FC7BC3-6A4E-4CE3-8523-756C7CB51662",
+                "kind": 0,
+                "linearGradient": [
+                    "#a1ffce",
+                    "#faffd1"
+                ]
+            },
+            "eventInfo": [],
+            "id": "03E405CA-B624-4D73-BF3D-378842ACF13C",
+            "kind": 1,
+            "phaseTimeRule": {
+                "beginTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "endTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "phaseTimeKind": 1
+            },
+            "stickers": [],
+            "texts": [
+                {
+                    "colorHex": "#00bfff",
+                    "fontName": "ChillRoundFBold",
+                    "fontSize": 100,
+                    "id": "477BE3D5-2992-4CC5-BB70-7F63585B1FEE",
+                    "posX": 79,
+                    "posY": 79,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "text": "躺",
+                    "zIndex": 1
+                }
+            ]
+        }
+    ],
+    "phasesBetweenEndTimeAndEndDate": [
+        {
+            "background": {
+                "backgroundColor": "#D3D2D0",
+                "id": "E4ED870B-085A-4D70-8DC5-93880DA557A1",
+                "kind": 0,
+                "linearGradient": [
+                    "#a1ffce",
+                    "#faffd1"
+                ]
+            },
+            "eventInfo": [],
+            "id": "26B0421E-7A56-4ACD-B5C3-27401236EEB5",
+            "kind": 4,
+            "phaseTimeRule": {
+                "beginTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "endTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "phaseTimeKind": 1
+            },
+            "stickers": [],
+            "texts": [
+                {
+                    "colorHex": "#00bfff",
+                    "fontName": "ChillRoundFBold",
+                    "fontSize": 100,
+                    "id": "19758921-126C-42DF-A061-D3AF24CF35CF",
+                    "posX": 79,
+                    "posY": 79,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "text": "躺",
+                    "zIndex": 1
+                }
+            ]
+        }
+    ],
+    "phasesBetweenStartAndStartTime": [
+        {
+            "background": {
+                "backgroundColor": "#D3D2D0",
+                "id": "71636D65-EA28-4AF1-9BB2-BE9677C7D3F3",
+                "kind": 0,
+                "linearGradient": [
+                    "#a1ffce",
+                    "#faffd1"
+                ]
+            },
+            "eventInfo": [],
+            "id": "63BDA626-7341-4DA8-870B-ADEF1E9AA548",
+            "kind": 2,
+            "phaseTimeRule": {
+                "beginTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "endTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "phaseTimeKind": 1
+            },
+            "stickers": [],
+            "texts": [
+                {
+                    "colorHex": "#00bfff",
+                    "fontName": "ChillRoundFBold",
+                    "fontSize": 100,
+                    "id": "7760FA17-8DC8-493C-BEAD-E1AF48F7170E",
+                    "posX": 79,
+                    "posY": 79,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "text": "躺",
+                    "zIndex": 1
+                }
+            ]
+        }
+    ]
+}

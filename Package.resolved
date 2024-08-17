@@ -1,0 +1,78 @@
+{
+  "originHash" : "7cde05036cf38229b5bb817fa1719f5f9bf09ccdcc6a99cecb5db45fc1a96589",
+  "pins" : [
+    {
+      "identity" : "colorkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Boris-Em/ColorKit.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "6e4375a6126eac0a29893c607ae318bdbe33310c"
+      }
+    },
+    {
+      "identity" : "datehelper",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/melvitax/DateHelper",
+      "state" : {
+        "revision" : "76d0840daab7288fc99b04a4c23d504f0394e083",
+        "version" : "5.0.1"
+      }
+    },
+    {
+      "identity" : "lemondateutils",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ailu2533/LemonDateUtils.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "56f3bf730ce4a2bb7bbae5d555fb7f3935e4cc73"
+      }
+    },
+    {
+      "identity" : "shift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vinhnx/Shift.git",
+      "state" : {
+        "revision" : "bfcfcb6368925a1f4862725691db310ad1637f06",
+        "version" : "0.11.0"
+      }
+    },
+    {
+      "identity" : "swift-algorithms",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-algorithms",
+      "state" : {
+        "revision" : "f6919dfc309e7f1b56224378b11e28bab5bccc42",
+        "version" : "1.2.0"
+      }
+    },
+    {
+      "identity" : "swift-collections",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-collections.git",
+      "state" : {
+        "revision" : "3d2dc41a01f9e49d84f0a3925fb858bed64f702d",
+        "version" : "1.1.2"
+      }
+    },
+    {
+      "identity" : "swift-numerics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-numerics.git",
+      "state" : {
+        "revision" : "0a5bc04095a675662cf24757cc0640aa2204253b",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "swiftmovable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ailu2533/SwiftMovable.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d11b99a19070081716bf4585a0bbccbe703984cb"
+      }
+    }
+  ],
+  "version" : 3
+}

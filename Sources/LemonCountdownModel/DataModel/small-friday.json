@@ -1,0 +1,405 @@
+{
+    "background": "#efeeef",
+    "phases": [
+        {
+            "background": {
+                "backgroundColor": "#D3D2D0",
+                "id": "D8FAD5DF-1EB2-473A-B1B8-AE673F03ED28",
+                "kind": 0,
+                "linearGradient": [
+                    "#FFA8A8",
+                    "#FCFF00"
+                ]
+            },
+            "eventInfo": [
+                {
+                    "colorHex": "#2f261e",
+                    "eventInfoType": 5,
+                    "fontName": "ChillRoundFBold",
+                    "fontSize": 15,
+                    "id": "7CF46698-7BE0-4257-BEA9-8F1E624B165F",
+                    "posX": 73,
+                    "posY": 47.66667175292969,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "zIndex": 1
+                },
+                {
+                    "colorHex": "#2f261e",
+                    "eventInfoType": 4,
+                    "fontName": "ChillRoundFRegular",
+                    "fontSize": 15,
+                    "id": "D1B6A459-0FE1-4187-96C1-48F7244927F2",
+                    "posX": 58,
+                    "posY": 22.666656494140625,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "zIndex": 1
+                }
+            ],
+            "id": "4D4C45E8-9C94-47E9-B1CA-6A784955BBA7",
+            "kind": 3,
+            "phaseTimeRule": {
+                "beginTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "endTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": true,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "phaseTimeKind": 1
+            },
+            "stickers": [
+                {
+                    "id": "B9FA10EE-5312-4C8C-8AD6-48D1202FD854",
+                    "posX": 105,
+                    "posY": 103.66665649414063,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "stickerName": "017-hungry",
+                    "zIndex": 1
+                }
+            ],
+            "texts": [
+                {
+                    "colorHex": "#2f261e",
+                    "fontName": "ChillRoundFRegular",
+                    "fontSize": 35,
+                    "id": "4A6D8708-E47F-4E91-8CAD-7630913FF868",
+                    "posX": 34.333343505859375,
+                    "posY": 108.33334350585938,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "text": "是",
+                    "zIndex": 1
+                }
+            ]
+        }
+    ],
+    "phasesAfterStartDate": [
+        {
+            "background": {
+                "backgroundColor": "#D3D2D0",
+                "id": "0A4BEAD1-1FA5-443D-9B58-B3AE91F833E0",
+                "kind": 0,
+                "linearGradient": [
+                    "#f6d365",
+                    "#fda085"
+                ]
+            },
+            "eventInfo": [
+                {
+                    "colorHex": "#2f261e",
+                    "eventInfoType": 5,
+                    "fontName": "ChillRoundFBold",
+                    "fontSize": 15,
+                    "id": "E04DED77-F411-414B-B2A0-5FFEC745C7DC",
+                    "posX": 79,
+                    "posY": 25,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "zIndex": 1
+                },
+                {
+                    "colorHex": "#2f261e",
+                    "eventInfoType": 1,
+                    "fontName": "ChillRoundFRegular",
+                    "fontSize": 15,
+                    "id": "1A61055B-E675-4A92-890B-50CAFCD783CC",
+                    "posX": 79,
+                    "posY": 140.6666717529297,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "zIndex": 1
+                }
+            ],
+            "id": "9526F114-29E8-405F-8D29-03E2BAB6A2A2",
+            "kind": 5,
+            "phaseTimeRule": {
+                "beginTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "endTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "phaseTimeKind": 1
+            },
+            "stickers": [
+                {
+                    "id": "26B1134E-1DE2-484C-8A3F-2D7AAA5C1D75",
+                    "posX": 79,
+                    "posY": 86,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "stickerName": "005-dog",
+                    "zIndex": 1
+                }
+            ],
+            "texts": []
+        }
+    ],
+    "phasesBeforeStartDate": [
+        {
+            "background": {
+                "backgroundColor": "#D3D2D0",
+                "id": "E61AE309-2901-485F-B771-D1127DBCACB0",
+                "kind": 0,
+                "linearGradient": [
+                    "#FFA8A8",
+                    "#FCFF00"
+                ]
+            },
+            "eventInfo": [
+                {
+                    "colorHex": "#2f261e",
+                    "eventInfoType": 5,
+                    "fontName": "ChillRoundFBold",
+                    "fontSize": 15,
+                    "id": "4C250355-E320-498E-BBFA-77167959223E",
+                    "posX": 72.66668701171875,
+                    "posY": 41.66670227050781,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "zIndex": 1
+                },
+                {
+                    "colorHex": "#2f261e",
+                    "eventInfoType": 0,
+                    "fontName": "ChillRoundFBold",
+                    "fontSize": 20,
+                    "id": "9D98F145-8B69-4041-AB74-67E8F6E27EC8",
+                    "posX": 53.666656494140625,
+                    "posY": 135,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "zIndex": 1
+                },
+                {
+                    "colorHex": "#2f261e",
+                    "eventInfoType": 4,
+                    "fontName": "ChillRoundFBold",
+                    "fontSize": 15,
+                    "id": "7818D9F3-9FEF-4517-AF7A-B336CA868121",
+                    "posX": 58,
+                    "posY": 18.333328247070313,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "zIndex": 1
+                }
+            ],
+            "id": "02D18E1B-948C-4386-8E67-F0A371118CFD",
+            "kind": 1,
+            "phaseTimeRule": {
+                "beginTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "endTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "phaseTimeKind": 1
+            },
+            "stickers": [
+                {
+                    "id": "3CB43703-2460-4533-A9D3-F851DEE436E9",
+                    "posX": 107,
+                    "posY": 96.66667175292969,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "stickerName": "016-dog",
+                    "zIndex": 1
+                }
+            ],
+            "texts": []
+        }
+    ],
+    "phasesBetweenEndTimeAndEndDate": [
+        {
+            "background": {
+                "backgroundColor": "#D3D2D0",
+                "id": "168E56AF-1890-4EEC-964B-7CBE0094EF86",
+                "kind": 0,
+                "linearGradient": [
+                    "#f6d365",
+                    "#fda085"
+                ]
+            },
+            "eventInfo": [
+                {
+                    "colorHex": "#2f261e",
+                    "eventInfoType": 5,
+                    "fontName": "ChillRoundFBold",
+                    "fontSize": 15,
+                    "id": "A96B0764-1D4F-4F97-860D-0E2EE729E1A5",
+                    "posX": 79,
+                    "posY": 27.666656494140625,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "zIndex": 1
+                }
+            ],
+            "id": "19B7F8B9-C20E-4261-97DA-C63D810BA3E0",
+            "kind": 4,
+            "phaseTimeRule": {
+                "beginTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "endTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "phaseTimeKind": 1
+            },
+            "stickers": [
+                {
+                    "id": "2E862845-3587-467C-9FCD-D27EA865FD0C",
+                    "posX": 79,
+                    "posY": 92,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "stickerName": "015-siamese cat",
+                    "zIndex": 1
+                }
+            ],
+            "texts": []
+        }
+    ],
+    "phasesBetweenStartAndStartTime": [
+        {
+            "background": {
+                "backgroundColor": "#D3D2D0",
+                "id": "E1083E48-B9C8-4B35-9D7F-0122EE4D7767",
+                "kind": 0,
+                "linearGradient": [
+                    "#f6d365",
+                    "#fda085"
+                ]
+            },
+            "eventInfo": [
+                {
+                    "colorHex": "#2f261e",
+                    "eventInfoType": 5,
+                    "fontName": "ChillRoundFRegular",
+                    "fontSize": 15,
+                    "id": "4713F1A1-BDC3-4CFE-B352-BCC1FE64E4A2",
+                    "posX": 79,
+                    "posY": 50.333343505859375,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "zIndex": 1
+                },
+                {
+                    "colorHex": "#2f261e",
+                    "eventInfoType": 4,
+                    "fontName": "ChillRoundFRegular",
+                    "fontSize": 15,
+                    "id": "2D94E9A4-57D6-4C23-82EE-F4685B2128B1",
+                    "posX": 79,
+                    "posY": 24.333343505859375,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "zIndex": 1
+                }
+            ],
+            "id": "70C25A0F-7D89-4115-A627-BA53323C835B",
+            "kind": 2,
+            "phaseTimeRule": {
+                "beginTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "endTimeOffset_": {
+                    "day": 0,
+                    "hour": 0,
+                    "isMax": false,
+                    "minute": 0,
+                    "month": 0,
+                    "second": 0,
+                    "week": 0,
+                    "year": 0
+                },
+                "phaseTimeKind": 1
+            },
+            "stickers": [
+                {
+                    "id": "379B9C6D-A9B4-49AD-B926-CBCD7A16C112",
+                    "posX": 103,
+                    "posY": 111.66665649414063,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "stickerName": "016-flower",
+                    "zIndex": 1
+                },
+                {
+                    "id": "046D81A1-441A-493A-B17B-2683FB73FC52",
+                    "posX": 79,
+                    "posY": 112,
+                    "rotationDegree": 0,
+                    "scale": 1,
+                    "stickerName": "007-Dog house",
+                    "zIndex": 1
+                }
+            ],
+            "texts": []
+        }
+    ]
+}
