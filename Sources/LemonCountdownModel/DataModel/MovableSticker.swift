@@ -9,14 +9,14 @@ import Foundation
 // import LemonUtils
 import SwiftMovable
 
-class MovableSticker: MovableObject, Hashable, CustomStringConvertible {
-    var stickerName: String
+public class MovableSticker: MovableObject, Hashable, CustomStringConvertible {
+    public var stickerName: String
 
     enum CodingKeys: String, CodingKey {
         case stickerName
     }
 
-    init(stickerName: String, pos: CGPoint = .zero) {
+    public init(stickerName: String, pos: CGPoint = .zero) {
         self.stickerName = stickerName
         super.init(pos: pos)
     }
@@ -27,13 +27,13 @@ class MovableSticker: MovableObject, Hashable, CustomStringConvertible {
         try super.init(from: decoder)
     }
 
-    override func encode(to encoder: Encoder) throws {
+    override public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(stickerName, forKey: .stickerName)
         try super.encode(to: encoder)
     }
 
-    var description: String {
+    public var description: String {
         return "MovableSticker(name: \(stickerName))"
     }
 
@@ -42,7 +42,7 @@ class MovableSticker: MovableObject, Hashable, CustomStringConvertible {
 //        && lhs.scale == rhs.scale
     }
 
-    override func hash(into hasher: inout Hasher) {
+    override public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(pos.x)
         hasher.combine(pos.y)

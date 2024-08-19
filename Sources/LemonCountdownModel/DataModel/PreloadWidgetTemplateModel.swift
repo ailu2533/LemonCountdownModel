@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @MainActor
-func preloadWidgetTemplateModel(modelContext: ModelContext, templateTitle: String, templateDataPath: String, size: WidgetSize) {
+public func preloadWidgetTemplateModel(modelContext: ModelContext, templateTitle: String, templateDataPath: String, size: WidgetSize) {
     // 从 本地mediumTemplateModel.json中读取数据，然后存入数据库中
     let builtin = DataModelType.builtin.rawValue
     do {

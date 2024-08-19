@@ -10,7 +10,7 @@ import LemonDateUtils
 // import LemonUtils
 
 extension WidgetTemplateModel {
-    static func createWidgetTemplateModel(title: String, size: WidgetSize) -> WidgetTemplateModel {
+    public static func createWidgetTemplateModel(title: String, size: WidgetSize) -> WidgetTemplateModel {
         let wt = WidgetTemplate()
         let phase = WidgetPhase(kind: .taskStartTimeAndEndTimeDuring, eventInfoProvider: nil)
         phase.phaseTimeRule.endTimeOffset_ = TimeOffset(isMax: true)

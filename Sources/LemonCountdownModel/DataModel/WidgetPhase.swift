@@ -12,33 +12,33 @@ import SwiftMovable
 import SwiftUI
 
 @Observable
-class WidgetPhase: Identifiable, Codable {
-    var id = UUID()
+public class WidgetPhase: Identifiable, Codable {
+    public var id = UUID()
 
     // 出现的时间
-    var timeOffset = TimeOffset()
-    var phaseTimeRule = PhaseTimeRule(phaseTimeKind: .taskStartDateBefore)
+    public var timeOffset = TimeOffset()
+    public var phaseTimeRule = PhaseTimeRule(phaseTimeKind: .taskStartDateBefore)
 
     // 时机
-    var kind: PhaseTimeKind = .taskStartDateBefore
+    public var kind: PhaseTimeKind = .taskStartDateBefore
 
     // 画面相关数据
-    var stickers: [MovableSticker] = []
-    var texts: [TextItem] = []
-    var eventInfo: [EventInfo] = []
-    var background = Background()
+    public var stickers: [MovableSticker] = []
+    public var texts: [TextItem] = []
+    public var eventInfo: [EventInfo] = []
+    public var background = Background()
 
     // 绑定的事件
     @ObservationIgnored private var eventInfoProvider: EventInfoProvider?
 
-    func setEventInfoProvider(_ eventInfoProvider: EventInfoProvider?) {
+    public func setEventInfoProvider(_ eventInfoProvider: EventInfoProvider?) {
         self.eventInfoProvider = eventInfoProvider
         eventInfo.forEach {
             $0.setEventInfoProvider(eventInfoProvider)
         }
     }
 
-    func getEventInfoProvider() -> EventInfoProvider? {
+    public func getEventInfoProvider() -> EventInfoProvider? {
         eventInfoProvider
     }
 
@@ -48,7 +48,7 @@ class WidgetPhase: Identifiable, Codable {
         case id, phaseTimeRule, stickers, texts, eventInfo, background, kind
     }
 
-    init(kind: PhaseTimeKind, eventInfoProvider: EventInfoProvider?, stickers: [MovableSticker] = [], texts: [TextItem] = [], eventInfo: [EventInfo] = [], background: Background = Background()) {
+    public init(kind: PhaseTimeKind, eventInfoProvider: EventInfoProvider?, stickers: [MovableSticker] = [], texts: [TextItem] = [], eventInfo: [EventInfo] = [], background: Background = Background()) {
         self.stickers = stickers
         self.texts = texts
         self.eventInfo = eventInfo
@@ -66,7 +66,7 @@ class WidgetPhase: Identifiable, Codable {
         case dataCorruption(String)
     }
 
-    required init(from decoder: Decoder) throws {
+    public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         do {
             id = try container.decode(UUID.self, forKey: .id)
@@ -81,7 +81,7 @@ class WidgetPhase: Identifiable, Codable {
         }
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         do {
             try container.encode(id, forKey: .id)
@@ -106,11 +106,11 @@ class WidgetPhase: Identifiable, Codable {
 }
 
 extension WidgetPhase: Hashable {
-    static func == (lhs: WidgetPhase, rhs: WidgetPhase) -> Bool {
+    public static func == (lhs: WidgetPhase, rhs: WidgetPhase) -> Bool {
         return lhs.id == rhs.id
     }
 
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(stickers)
         hasher.combine(texts)
@@ -121,7 +121,7 @@ extension WidgetPhase: Hashable {
 }
 
 extension WidgetPhase: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         return """
         WidgetPhase(
         id: \(id),

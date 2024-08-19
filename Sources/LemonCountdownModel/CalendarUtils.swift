@@ -10,9 +10,9 @@ import Foundation
 // import LemonUtils
 import Shift
 
-class CalendarUtils {
+public class CalendarUtils {
     // 删除事件
-    static func deleteEventById(_ id: String) async {
+    public static func deleteEventById(_ id: String) async {
         do {
             try await Shift.shared.deleteEvent(identifier: id, span: .futureEvents)
         } catch {
@@ -21,7 +21,7 @@ class CalendarUtils {
     }
 
     // 原来没有提醒
-    static func addNotification(_ newModel: EventModel) async {
+    public static func addNotification(_ newModel: EventModel) async {
         if newModel.isNotificationEnabled {
             do {
                 var event: EKEvent
@@ -90,7 +90,7 @@ class CalendarUtils {
         }
     }
 
-    static func modifyNotification(origin: EventModel, modified: EventModel, cb: EventBuilder) async {
+    public static func modifyNotification(origin: EventModel, modified: EventModel, cb: EventBuilder) async {
         guard let eventIdentifier = modified.eventIdentifier,
               let event = Shift.shared.eventStore.event(withIdentifier: eventIdentifier) else {
             if modified.isNotificationEnabled {

@@ -15,7 +15,7 @@ extension RecurringEvent {
     // }
 
     // 计算事件的下一次开始时间
-    var nextStartDate: Date {
+    public var nextStartDate: Date {
         // 不重复，不需要缓存
         if !isRepeatEnabled {
             // 如果不重复，直接返回原始开始日期
@@ -28,7 +28,7 @@ extension RecurringEvent {
     }
 
     // 昂贵的计算操作
-    func calcNextStartDate() -> Date {
+    public func calcNextStartDate() -> Date {
 //        Logging.shared.debug("calcNextStartDate \(title)")
         // 重复
         if Calendar.current.isDateInToday(startDate) {
@@ -66,7 +66,7 @@ extension RecurringEvent {
     }
 
     // TODO: 实现 就是下一次开始日期
-    var nextEndDate: Date {
+    public var nextEndDate: Date {
         let components = Calendar.current.dateComponents([.hour, .minute], from: endDate)
         let date = Calendar.current.date(bySettingHour: components.hour!, minute: components.minute!, second: 0, of: nextStartDate)
         return date!
@@ -74,7 +74,7 @@ extension RecurringEvent {
 }
 
 extension EventModel {
-    func updateFrom(builder cb: EventBuilder) {
+    public func updateFrom(builder cb: EventBuilder) {
         title = cb.title
         startDate = cb.startDate
         endDate = cb.endDate
@@ -105,7 +105,7 @@ extension EventModel {
         }
     }
 
-    func invalidateCache() {
+    public func invalidateCache() {
         lastCacheUpdateDate = nil
         nextStartDateCache = nil
     }

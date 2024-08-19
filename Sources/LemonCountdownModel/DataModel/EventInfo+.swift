@@ -10,7 +10,7 @@ import Foundation
 import SwiftMovable
 
 extension EventInfo: Stylable {
-    var text: String {
+    public var text: String {
         get {
             ""
         }
@@ -18,7 +18,7 @@ extension EventInfo: Stylable {
         }
     }
 
-    var editable: Bool {
+    public var editable: Bool {
         false
     }
 }

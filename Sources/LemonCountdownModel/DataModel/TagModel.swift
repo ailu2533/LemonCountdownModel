@@ -10,17 +10,17 @@ import SwiftData
 
 // 打卡标签, 用于习惯的分类管理
 @Model
-class Tag {
-    var uuid: UUID
+public class Tag {
+    public var uuid: UUID
 
-    @Attribute(.unique) var title: String
-    var events: [EventModel]? = []
+    @Attribute(.unique) public var title: String
+    public var events: [EventModel]? = []
 
-    var createTime = Date.now
-    var updateTime = Date.now
-    var sortValue = 0
+    public var createTime = Date.now
+    public var updateTime = Date.now
+    public var sortValue = 0
 
-    init(title: String, sortValue: Int = 0) {
+    public init(title: String, sortValue: Int = 0) {
         self.title = title
         self.sortValue = sortValue
 
@@ -32,7 +32,7 @@ class Tag {
 }
 
 extension Tag: Identifiable {
-    var id: UUID {
+    public var id: UUID {
         uuid
     }
 }

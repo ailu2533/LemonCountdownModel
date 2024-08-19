@@ -9,14 +9,14 @@ import Foundation
 import SwiftData
 
 @Model
-class WidgetModel: Identifiable {
-    var id = UUID()
+public class WidgetModel: Identifiable {
+    public var id = UUID()
     // 模板的json数据 类型是MultiplePhaseTemplate
-    var widgetTemplateModel: WidgetTemplateModel
-    var eventModel: EventModel
-    var createTime: Date
+    public var widgetTemplateModel: WidgetTemplateModel
+    public var eventModel: EventModel
+    public var createTime: Date
 
-    init(widgetTemplateModel: WidgetTemplateModel, eventModel: EventModel) {
+    public init(widgetTemplateModel: WidgetTemplateModel, eventModel: EventModel) {
         self.widgetTemplateModel = widgetTemplateModel
         self.eventModel = eventModel
         createTime = .now

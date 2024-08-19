@@ -8,7 +8,7 @@
 import Foundation
 
 // 通知类型
-enum EventNotification: Int, CaseIterable, Identifiable, Codable {
+public enum EventNotification: Int, CaseIterable, Identifiable, Codable {
     case none = 0 // 无提醒
     case start = 1 // 日程开始时
     case inAdvanced5m = 2 // 提前 5 分钟
@@ -27,11 +27,11 @@ enum EventNotification: Int, CaseIterable, Identifiable, Codable {
     case twoDaysBefore9AM = 14 // 前两天 9 点
     case weekBefore9AM = 15 // 前一周 9 点
 
-    var id: Self {
+    public var id: Self {
         self
     }
 
-    var time: TimeInterval {
+    public var time: TimeInterval {
         switch self {
         case .none:
             return 0
@@ -71,7 +71,7 @@ enum EventNotification: Int, CaseIterable, Identifiable, Codable {
         }
     }
 
-    var text: String {
+    public var text: String {
         switch self {
         case .none:
             return String(localized: "无")

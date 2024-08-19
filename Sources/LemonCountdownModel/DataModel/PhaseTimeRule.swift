@@ -10,7 +10,7 @@ import LemonDateUtils
 // import LemonUtils
 import SwiftUI
 
-enum PhaseTimeKind: Int, Codable, Comparable {
+public enum PhaseTimeKind: Int, Codable, Comparable {
     // 事件开始日期前
     // 事件开始日期和事件开始具体时间之间
     // 事件中 任务开始具体时间和事件结束具体时间 之间
@@ -23,7 +23,7 @@ enum PhaseTimeKind: Int, Codable, Comparable {
     case endTimeAndTaskEndDateDuring = 4
     case taskEndDateAfter = 5
 
-    var text: String {
+    public var text: String {
         switch self {
         case .taskStartDateBefore:
             String(localized: "事件开始日期前")
@@ -38,29 +38,29 @@ enum PhaseTimeKind: Int, Codable, Comparable {
         }
     }
 
-    static func < (lhs: PhaseTimeKind, rhs: PhaseTimeKind) -> Bool {
+    public static func < (lhs: PhaseTimeKind, rhs: PhaseTimeKind) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
 }
 
-struct PhaseTimeRule: Codable, Hashable {
-    var phaseTimeKind: PhaseTimeKind
+public struct PhaseTimeRule: Codable, Hashable {
+    public var phaseTimeKind: PhaseTimeKind
     // 只有kind 是 taskStartTimeAndEndTimeDuring 时，beginTimeOffset 和 endTimeOffset，weekday 才有效
-    var beginTimeOffset: TimeInterval {
+    public var beginTimeOffset: TimeInterval {
         beginTimeOffset_.toTimeInterval()
     }
 
-    var endTimeOffset: TimeInterval {
+    public var endTimeOffset: TimeInterval {
         endTimeOffset_.toTimeInterval()
     }
 
-    var beginTimeOffset_ = TimeOffset()
-    var endTimeOffset_ = TimeOffset()
-    var weekday: Int?
+    public var beginTimeOffset_ = TimeOffset()
+    public var endTimeOffset_ = TimeOffset()
+    public var weekday: Int?
 }
 
 extension PhaseTimeRule: Comparable {
-    static func < (lhs: PhaseTimeRule, rhs: PhaseTimeRule) -> Bool {
+    public static func < (lhs: PhaseTimeRule, rhs: PhaseTimeRule) -> Bool {
         if lhs.phaseTimeKind != rhs.phaseTimeKind {
             return lhs.phaseTimeKind < rhs.phaseTimeKind
         }

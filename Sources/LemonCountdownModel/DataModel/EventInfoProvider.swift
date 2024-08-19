@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol EventInfoProvider {
+public protocol EventInfoProvider {
     var id: UUID { get set }
     var widgetTitle: String { get }
     var eventTitle: String { get }

@@ -36,9 +36,9 @@ public enum BackgroundKind: Int, CaseIterable, Codable, Identifiable {
 public final class Background: Identifiable, Codable {
     public var id = UUID()
     public var kind: BackgroundKind
-    var backgroundColor: String?
-    var backgroundImage: String?
-    var linearGradient: [String]?
+    public var backgroundColor: String?
+    public var backgroundImage: String?
+    public var linearGradient: [String]?
 
     enum CodingKeys: String, CodingKey {
         case id, kind, backgroundColor, backgroundImage, linearGradient
@@ -85,8 +85,7 @@ public final class Background: Identifiable, Codable {
         switch kind {
         case .morandiColors, .macaronColors:
             if let backgroundColor {
-                 Color(uiColor: UIColor(hex: backgroundColor) ?? .clear)
-
+                Color(uiColor: UIColor(hex: backgroundColor) ?? .clear)
             }
         case .linearGredient:
             if let linearGradient, !linearGradient.isEmpty {
@@ -115,7 +114,7 @@ extension Background: Hashable {
 }
 
 extension Background {
-    func deepCopy() -> Background {
+    public func deepCopy() -> Background {
         return Background(kind: kind, backgroundColor: backgroundColor, backgroundImage: backgroundImage, linearGradient: linearGradient != nil ? Array(linearGradient!) : nil)
     }
 }

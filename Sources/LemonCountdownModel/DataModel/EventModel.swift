@@ -11,14 +11,14 @@ import LemonDateUtils
 // import LemonUtils
 import SwiftData
 
-enum DataModelType: Int, Codable {
+public enum DataModelType: Int, Codable {
     // 用户创建
     case user
     // 内建数据不允许修改
     case builtin
 }
 
-protocol RecurringEvent {
+public protocol RecurringEvent {
     var title: String { get }
     var startDate: Date { get }
     var endDate: Date { get }
@@ -34,41 +34,41 @@ protocol RecurringEvent {
 }
 
 @Model
-class EventModel: Identifiable, RecurringEvent {
+public class EventModel: Identifiable, RecurringEvent {
     // MARK: - Identifiers
 
-    var id: UUID
+    public var id: UUID
 
     // MARK: - Basic Event Details
 
-    var title: String
-    var startDate: Date
-    var endDate: Date
-    var isAllDayEvent = true
-    var isEnabled = true
+    public var title: String
+    public var startDate: Date
+    public var endDate: Date
+    public var isAllDayEvent = true
+    public var isEnabled = true
 
     // MARK: - Appearance
 
-    var icon: String
-    var colorHex: String
-    var backgroundImage: String?
+    public var icon: String
+    public var colorHex: String
+    public var backgroundImage: String?
 
     // MARK: - Recurrence Settings
 
-    var recurrenceType = RecurrenceType.singleCycle
-    var isRepeatEnabled = false
-    var repeatPeriod = RepeatPeriod.daily
-    var repeatInterval = 1
-    var repeatEndDate: Date?
+    public var recurrenceType = RecurrenceType.singleCycle
+    public var isRepeatEnabled = false
+    public var repeatPeriod = RepeatPeriod.daily
+    public var repeatInterval = 1
+    public var repeatEndDate: Date?
     // Bit array for custom weekly repeat (e.g., 15 means Mon to Thu)
-    var repeatCustomWeekly: UInt8 = 0
+    public var repeatCustomWeekly: UInt8 = 0
 
     // MARK: - Notifications
 
-    var isNotificationEnabled = false
-    var eventIdentifier: String?
-    var firstNotification = EventNotification.none
-    var secondNotification = EventNotification.none
+    public var isNotificationEnabled = false
+    public var eventIdentifier: String?
+    public var firstNotification = EventNotification.none
+    public var secondNotification = EventNotification.none
 
     // MARK: - Widget Templates
 
@@ -79,23 +79,23 @@ class EventModel: Identifiable, RecurringEvent {
     // MARK: - Relationships
 
     @Relationship(inverse: \Tag.events)
-    var tag: Tag?
+    public var tag: Tag?
 
     // MARK: - Metadata
 
-    var type: DataModelType.RawValue = DataModelType.user.rawValue
-    var createDate: Date
-    var updateDate: Date
+    public var type: DataModelType.RawValue = DataModelType.user.rawValue
+    public var createDate: Date
+    public var updateDate: Date
 
     // MARK: - Caching
 
     // 上次更新缓存的时间，如果缓存隔天了，则需要重新更新
-    @Transient var lastCacheUpdateDate: Date?
-    @Transient var nextStartDateCache: Date?
+    @Transient public var lastCacheUpdateDate: Date?
+    @Transient public var nextStartDateCache: Date?
 
     // MARK: - Initialization
 
-    init(title: String, startDate: Date, endDate: Date, icon: String, colorHex: String) {
+    public init(title: String, startDate: Date, endDate: Date, icon: String, colorHex: String) {
         id = UUID()
         self.title = title
         self.startDate = startDate
@@ -121,7 +121,7 @@ extension EventModel: Hashable {
 }
 
 extension EventModel: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .short

@@ -11,39 +11,39 @@ import LemonDateUtils
 import SwiftData
 
 @Model
-class EventBackupModel: Identifiable, RecurringEvent {
+public class EventBackupModel: Identifiable, RecurringEvent {
     // MARK: - Identifiers
 
-    var id: UUID
+    public var id: UUID
 
     // MARK: - Basic Event Details
 
-    var title: String
-    var startDate: Date
-    var endDate: Date
-    var isAllDayEvent = true
-    var isEnabled = true
+    public var title: String
+    public var startDate: Date
+    public var endDate: Date
+    public var isAllDayEvent = true
+    public var isEnabled = true
 
     // MARK: - Recurrence Settings
 
-    var recurrenceType = RecurrenceType.singleCycle
-    var isRepeatEnabled = false
-    var repeatPeriod = RepeatPeriod.daily
-    var repeatInterval = 1
-    var repeatEndDate: Date?
+    public var recurrenceType = RecurrenceType.singleCycle
+    public var isRepeatEnabled = false
+    public var repeatPeriod = RepeatPeriod.daily
+    public var repeatInterval = 1
+    public var repeatEndDate: Date?
     // Bit array for custom weekly repeat (e.g., 15 means Mon to Thu)
-    var repeatCustomWeekly: UInt8 = 0
+    public var repeatCustomWeekly: UInt8 = 0
 
     // 上次更新缓存的时间，如果缓存隔天了，则需要重新更新
-    @Transient var lastCacheUpdateDate: Date?
-    @Transient var nextStartDateCache: Date?
+    @Transient public var lastCacheUpdateDate: Date?
+    @Transient public var nextStartDateCache: Date?
 
-    var createDate: Date
-    var updateDate: Date
+    public var createDate: Date
+    public var updateDate: Date
 
     // MARK: - Initialization
 
-    init(title: String, startDate: Date, endDate: Date, isAllDayEvent: Bool, isEnabled: Bool, recurrenceType: RecurrenceType, isRepeatEnabled: Bool, repeatPeriod: RepeatPeriod, repeatInterval: Int, repeatEndDate: Date? = nil, repeatCustomWeekly: UInt8) {
+    public init(title: String, startDate: Date, endDate: Date, isAllDayEvent: Bool, isEnabled: Bool, recurrenceType: RecurrenceType, isRepeatEnabled: Bool, repeatPeriod: RepeatPeriod, repeatInterval: Int, repeatEndDate: Date? = nil, repeatCustomWeekly: UInt8) {
         id = UUID()
         self.title = title
         self.startDate = startDate
@@ -78,7 +78,7 @@ extension EventBackupModel: Equatable {
 }
 
 extension EventBackupModel: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium // 设置日期显示为中等长度
         dateFormatter.timeStyle = .short // 设置时间显示为短格式
@@ -115,15 +115,23 @@ extension EventBackupModel: CustomStringConvertible {
 }
 
 extension EventBackupModel: EventInfoProvider {
-    var widgetTitle: String {
+    public var widgetTitle: String {
         ""
     }
 
-    var eventTitle: String {
+    public var eventTitle: String {
         title
     }
 
-    var daysUntilNextStart: Int {
+    public var daysUntilNextStart: Int {
         Calendar.current.numberOfDaysBetween(Date(), and: nextStartDate)
+    }
+
+    public var nextStartDate: Date {
+        Date()
+    }
+
+    public var nextEndDate: Date {
+        Date()
     }
 }

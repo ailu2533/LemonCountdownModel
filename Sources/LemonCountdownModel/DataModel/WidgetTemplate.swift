@@ -8,12 +8,12 @@
 import Foundation
 
 @Observable
-class WidgetTemplate: Identifiable, Codable {
-    var id = UUID()
+public class WidgetTemplate: Identifiable, Codable {
+    public var id = UUID()
 
     @ObservationIgnored private var widgetTempletModel: WidgetTemplateModel?
 
-    func setWidgetTemplateModel(_ widgetTemplatemodel: WidgetTemplateModel) {
+    public func setWidgetTemplateModel(_ widgetTemplatemodel: WidgetTemplateModel) {
         widgetTempletModel = widgetTemplatemodel
         if widgetTemplatemodel.templateKind == WidgetTemplateKind.widgetInstance.rawValue {
             phases.forEach { $0.setEventInfoProvider(widgetTemplatemodel.eventBackup) }
@@ -24,7 +24,7 @@ class WidgetTemplate: Identifiable, Codable {
         }
     }
 
-    func getWidgetTemplateModel() -> WidgetTemplateModel? {
+    public func getWidgetTemplateModel() -> WidgetTemplateModel? {
         if widgetTempletModel == nil {
             fatalError()
         }
@@ -32,7 +32,7 @@ class WidgetTemplate: Identifiable, Codable {
         return widgetTempletModel
     }
 
-    func deleteWidgetPhase(_ phase: WidgetPhase) {
+    public func deleteWidgetPhase(_ phase: WidgetPhase) {
         phases.removeAll { $0.id == phase.id }
 
         phases.last?.phaseTimeRule.endTimeOffset_.isMax = true
@@ -44,7 +44,7 @@ class WidgetTemplate: Identifiable, Codable {
     }
 
     // check  whether phase can be deleted
-    func checkCanBeDeleted(phase: WidgetPhase) -> Bool {
+    public func checkCanBeDeleted(phase: WidgetPhase) -> Bool {
         switch phase.kind {
         case .taskStartDateBefore:
             return phasesBeforeStartDate.count > 1
@@ -60,32 +60,32 @@ class WidgetTemplate: Identifiable, Codable {
     }
 
     // TODO:
-    let size = WidgetSize.small
+    public let size = WidgetSize.small
 
-    var background: String
+    public var background: String
     // 开始时间和结束时间的阶段
-    var phases: [WidgetPhase] = []
+    public var phases: [WidgetPhase] = []
     // 开始日期之前的阶段
-    var phasesBeforeStartDate: [WidgetPhase] = []
+    public var phasesBeforeStartDate: [WidgetPhase] = []
     // 开始日期之后的阶段
-    var phasesAfterStartDate: [WidgetPhase] = []
+    public var phasesAfterStartDate: [WidgetPhase] = []
     // 开始日期和开始时间之间的阶段
-    var phasesBetweenStartAndStartTime: [WidgetPhase] = []
+    public var phasesBetweenStartAndStartTime: [WidgetPhase] = []
     // 结束时间和结束日期之间的阶段
-    var phasesBetweenEndTimeAndEndDate: [WidgetPhase] = []
+    public var phasesBetweenEndTimeAndEndDate: [WidgetPhase] = []
 
     enum CodingKeys: String, CodingKey {
         case widgetTempletModel, background, phases, phasesBeforeStartDate, phasesAfterStartDate, phasesBetweenStartAndStartTime, phasesBetweenEndTimeAndEndDate
     }
 
-    init(phases: [WidgetPhase] = [], background: String = "#efeeef") {
+    public init(phases: [WidgetPhase] = [], background: String = "#efeeef") {
         self.phases = phases
         self.background = background
 
         Logging.openUrl.debug("init WidgetTemplate: \(background) phases: \(phases.debugDescription)")
     }
 
-    func updateFromModel(_ model: WidgetTemplateModel) {
+    public func updateFromModel(_ model: WidgetTemplateModel) {
         let wt = model.toWidgetTemplate()
         background = wt.background
         phases = wt.phases
@@ -97,7 +97,7 @@ class WidgetTemplate: Identifiable, Codable {
 //        self.objectWillChange.send()
     }
 
-    required init(from decoder: Decoder) throws {
+    public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         background = try container.decode(String.self, forKey: .background)
         phases = try container.decode([WidgetPhase].self, forKey: .phases)
@@ -115,7 +115,7 @@ class WidgetTemplate: Identifiable, Codable {
 //        Logging.eventInfo.debug("phase \(phases[0].description)")
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(background, forKey: .background)
         try container.encode(phases, forKey: .phases)
@@ -131,11 +131,11 @@ class WidgetTemplate: Identifiable, Codable {
 }
 
 extension WidgetTemplate: Hashable {
-    static func == (lhs: WidgetTemplate, rhs: WidgetTemplate) -> Bool {
+    public static func == (lhs: WidgetTemplate, rhs: WidgetTemplate) -> Bool {
         return lhs.hashValue == rhs.hashValue
     }
 
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(phases)
         hasher.combine(background)
         hasher.combine(phasesBeforeStartDate)

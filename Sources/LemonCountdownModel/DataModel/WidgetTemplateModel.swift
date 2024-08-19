@@ -10,11 +10,11 @@ import SwiftData
 import SwiftUI
 import UIKit
 
-enum WidgetTemplateKind: Int, CaseIterable, Codable, Identifiable {
+public enum WidgetTemplateKind: Int, CaseIterable, Codable, Identifiable {
     case baseTemplate = 0
     case widgetInstance = 1
 
-    var id: Self {
+    public var id: Self {
         self
     }
 
@@ -29,37 +29,37 @@ enum WidgetTemplateKind: Int, CaseIterable, Codable, Identifiable {
 }
 
 @Model
-class WidgetTemplateModel {
+public class WidgetTemplateModel {
     // 模板id
-    var uuid = UUID()
+    public var uuid = UUID()
     // 模板名称
-    var title: String
-    let sizeStore: WidgetSize.RawValue = WidgetSize.small.rawValue
+    public var title: String
+    public let sizeStore: WidgetSize.RawValue = WidgetSize.small.rawValue
     // 模板尺寸
-    var size: WidgetSize {
+    public var size: WidgetSize {
         WidgetSize(rawValue: sizeStore) ?? WidgetSize.small
     }
 
     // 使用了此模板的事件
-    let event: EventModel?
+    public let event: EventModel?
     // 新建一个 EventBackupModel结构
 
     @Relationship(deleteRule: .cascade)
-    let eventBackup: EventBackupModel?
+    public let eventBackup: EventBackupModel?
 
     // 如果模板绑定事件或，kind 就是 instance
-    let templateKind: WidgetTemplateKind.RawValue = WidgetTemplateKind.baseTemplate.rawValue
+    public let templateKind: WidgetTemplateKind.RawValue = WidgetTemplateKind.baseTemplate.rawValue
 
     // 模板的json数据 类型是WidgetTemplate
-    var jsonData: String
+    public var jsonData: String
 
     // 数据类型
     var dataModelType: DataModelType.RawValue = DataModelType.user.rawValue
 
-    var createTime: Date
-    var updateTime: Date
+    public var createTime: Date
+    public var updateTime: Date
 
-    init(title: String, jsonData: String, size: WidgetSize = .small, templateKind: WidgetTemplateKind = WidgetTemplateKind.baseTemplate, event: EventModel?, eventBackup: EventBackupModel?) {
+    public init(title: String, jsonData: String, size: WidgetSize = .small, templateKind: WidgetTemplateKind = WidgetTemplateKind.baseTemplate, event: EventModel?, eventBackup: EventBackupModel?) {
         self.title = title
         self.jsonData = jsonData
         sizeStore = size.rawValue
@@ -70,7 +70,7 @@ class WidgetTemplateModel {
         updateTime = .now
     }
 
-    static func encodeWidgetTemplate(_ widgetTemplate: WidgetTemplate) -> String {
+    public static func encodeWidgetTemplate(_ widgetTemplate: WidgetTemplate) -> String {
         do {
             let json = try JSONEncoder().encode(widgetTemplate)
             return String(data: json, encoding: .utf8)!
@@ -80,7 +80,7 @@ class WidgetTemplateModel {
     }
 
     // 将json字符串转换为MultiplePhaseTemplate
-    func toWidgetTemplate() -> WidgetTemplate {
+    public func toWidgetTemplate() -> WidgetTemplate {
         do {
             let widgetTemplate = try JSONDecoder().decode(WidgetTemplate.self, from: jsonData.data(using: .utf8)!)
             widgetTemplate.setWidgetTemplateModel(self)
@@ -93,7 +93,7 @@ class WidgetTemplateModel {
     }
 }
 
-func decodeWidgetTemplate(_ jsonData: String) -> WidgetTemplate {
+public func decodeWidgetTemplate(_ jsonData: String) -> WidgetTemplate {
     do {
         return try JSONDecoder().decode(WidgetTemplate.self, from: jsonData.data(using: .utf8)!)
     } catch {
@@ -103,7 +103,7 @@ func decodeWidgetTemplate(_ jsonData: String) -> WidgetTemplate {
 }
 
 extension WidgetTemplateModel: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
@@ -133,14 +133,14 @@ extension WidgetTemplateModel: CustomStringConvertible {
 }
 
 extension WidgetTemplateModel: Identifiable {
-    var id: UUID {
+    public var id: UUID {
         uuid
     }
 }
 
 extension WidgetTemplateModel {
     // 创建一个新的WidgetTemplateModel实例，复制当前实例的属性，但kind设置为instance
-    func cloneAsWidgetInstance(event: EventModel, eventBackup: EventBackupModel) -> WidgetTemplateModel {
+    public func cloneAsWidgetInstance(event: EventModel, eventBackup: EventBackupModel) -> WidgetTemplateModel {
         let newTitle = "\(event.title) \(Date().formatted(date: .omitted, time: .shortened))"
 
 //        clonedModel.event = event

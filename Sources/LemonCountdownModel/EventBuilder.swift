@@ -5,9 +5,9 @@
 //  Created by ailu on 2024/5/4.
 //
 
+import Collections
 import Foundation
 import LemonDateUtils
-import Collections
 
 // import LemonUtils
 
@@ -35,28 +35,28 @@ let desserts: [String] = [
 ]
 
 let animals: [String] = [
-        "dog_1864532",
-        "elephant_1864469",
-        "hen_1864470",
-        "monkey_1864483",
-        "parrot_1864474",
-        "sheep_1864535",
-        "beach_2990644",
-        "dolphin_1864473",
-        "hedgehog_1864601",
-        "koala_1864527",
-        "panda-bear_1864516",
-        "rabbit_1864488",
-        "squirrel_1864480"
+    "dog_1864532",
+    "elephant_1864469",
+    "hen_1864470",
+    "monkey_1864483",
+    "parrot_1864474",
+    "sheep_1864535",
+    "beach_2990644",
+    "dolphin_1864473",
+    "hedgehog_1864601",
+    "koala_1864527",
+    "panda-bear_1864516",
+    "rabbit_1864488",
+    "squirrel_1864480"
 ]
 
 let emoji = [
-     "idea_8231426",
-        "laughing_8231446",
-        "love_2018269",
-        "smileys_9470713",
-        "stars_8231347",
-        "tired_2018421"
+    "idea_8231426",
+    "laughing_8231446",
+    "love_2018269",
+    "smileys_9470713",
+    "stars_8231347",
+    "tired_2018421"
 ]
 
 let iconsMap: OrderedDictionary<String, [String]> = [
@@ -65,7 +65,7 @@ let iconsMap: OrderedDictionary<String, [String]> = [
     String(localized: "动物"): animals
 ]
 
-enum WidgetSize: Int, CaseIterable, Identifiable, Codable {
+public enum WidgetSize: Int, CaseIterable, Identifiable, Codable {
     case small = 0
     case medium = 1
 //    case large = 2
@@ -81,46 +81,46 @@ enum WidgetSize: Int, CaseIterable, Identifiable, Codable {
         }
     }
 
-    var id: Int {
+    public var id: Int {
         return rawValue
     }
 }
 
 @Observable
-class EventBuilder {
-    var title = ""
-    var startDate: Date = .now
-    var endDate: Date = .now
-    var isAllDayEvent = true
-    var isEnabled = true
-    var icon = ""
-    var colorHex = ""
-    var backgroundImage: String?
+public class EventBuilder {
+    public var title = ""
+    public var startDate: Date = .now
+    public var endDate: Date = .now
+    public var isAllDayEvent = true
+    public var isEnabled = true
+    public var icon = ""
+    public var colorHex = ""
+    public var backgroundImage: String?
 
-    var recurrenceType = RecurrenceType.singleCycle
-    var repeatCustomWeekly: UInt8 = 0
-    var isRepeatEnabled = false
-    var repeatPeriod: RepeatPeriod = .daily
-    var repeatInterval = 1
-    var hasRepeatEndDate = true
-    var repeatEndDate: Date?
+    public var recurrenceType = RecurrenceType.singleCycle
+    public var repeatCustomWeekly: UInt8 = 0
+    public var isRepeatEnabled = false
+    public var repeatPeriod: RepeatPeriod = .daily
+    public var repeatInterval = 1
+    public var hasRepeatEndDate = true
+    public var repeatEndDate: Date?
 
-    var tag: Tag?
+    public var tag: Tag?
 
-    var eventType: DataModelType.RawValue = DataModelType.user.rawValue
-    var isNotificationEnabled = false
-    var firstNotification: EventNotification = .none
-    var secondNotification: EventNotification = .none
-    var eventIdentifier = ""
+    public var eventType: DataModelType.RawValue = DataModelType.user.rawValue
+    public var isNotificationEnabled = false
+    public var firstNotification: EventNotification = .none
+    public var secondNotification: EventNotification = .none
+    public var eventIdentifier = ""
 
     // 小号小组件
-    var widgetTemplateModel: WidgetTemplateModel?
+    public var widgetTemplateModel: WidgetTemplateModel?
     // 中号小组件
-    var widgetTemplateModelMedium: WidgetTemplateModel?
+    public var widgetTemplateModelMedium: WidgetTemplateModel?
     // 号小组件
-    var widgetTemplateModelLarge: WidgetTemplateModel?
+    public var widgetTemplateModelLarge: WidgetTemplateModel?
 
-    init() {
+    public init() {
         let calendar = Calendar.current
         let today = Date()
 
@@ -136,7 +136,7 @@ class EventBuilder {
         }
     }
 
-    func postInit(_ event: EventModel) {
+    public func postInit(_ event: EventModel) {
         title = event.title
         startDate = event.startDate
         endDate = event.endDate
@@ -170,7 +170,7 @@ class EventBuilder {
         isAllDayEvent = event.isAllDayEvent
     }
 
-    func adjustDate() {
+    public func adjustDate() {
         if isAllDayEvent {
             // startDate 为当上午 9 点
             let startOfDay = startDate.adjust(for: .startOfDay)!
@@ -180,96 +180,96 @@ class EventBuilder {
     }
 
     @discardableResult
-    func setTitle(_ title: String) -> EventBuilder {
+    public func setTitle(_ title: String) -> EventBuilder {
         self.title = title
         return self
     }
 
     @discardableResult
-    func setStartDate(_ date: Date) -> EventBuilder {
+    public func setStartDate(_ date: Date) -> EventBuilder {
         startDate = date
         return self
     }
 
     @discardableResult
-    func setEndDate(_ date: Date) -> EventBuilder {
+    public func setEndDate(_ date: Date) -> EventBuilder {
         endDate = date
         return self
     }
 
     @discardableResult
-    func setAllDayEvent(_ allDay: Bool) -> EventBuilder {
+    public func setAllDayEvent(_ allDay: Bool) -> EventBuilder {
         isAllDayEvent = allDay
         return self
     }
 
     @discardableResult
-    func setEnabled(_ enabled: Bool) -> EventBuilder {
+    public func setEnabled(_ enabled: Bool) -> EventBuilder {
         isEnabled = enabled
         return self
     }
 
     @discardableResult
-    func setIcon(_ icon: String) -> EventBuilder {
+    public func setIcon(_ icon: String) -> EventBuilder {
         self.icon = icon
         return self
     }
 
     @discardableResult
-    func setColorHex(_ colorHex: String) -> EventBuilder {
+    public func setColorHex(_ colorHex: String) -> EventBuilder {
         self.colorHex = colorHex
         return self
     }
 
     @discardableResult
-    func setBackgroundImage(_ image: String) -> EventBuilder {
+    public func setBackgroundImage(_ image: String) -> EventBuilder {
         backgroundImage = image
         return self
     }
 
     @discardableResult
-    func setRepeatEnabled(_ enabled: Bool) -> EventBuilder {
+    public func setRepeatEnabled(_ enabled: Bool) -> EventBuilder {
         isRepeatEnabled = enabled
         return self
     }
 
     @discardableResult
-    func setRepeatPeriod(_ period: RepeatPeriod) -> EventBuilder {
+    public func setRepeatPeriod(_ period: RepeatPeriod) -> EventBuilder {
         repeatPeriod = period
         return self
     }
 
     @discardableResult
-    func setRepeatInterval(_ interval: Int) -> EventBuilder {
+    public func setRepeatInterval(_ interval: Int) -> EventBuilder {
         repeatInterval = interval
         return self
     }
 
     @discardableResult
-    func setRepeatEndDate(_ date: Date) -> EventBuilder {
+    public func setRepeatEndDate(_ date: Date) -> EventBuilder {
         repeatEndDate = date
         return self
     }
 
     @discardableResult
-    func setEventType(_ type: DataModelType.RawValue) -> EventBuilder {
+    public func setEventType(_ type: DataModelType.RawValue) -> EventBuilder {
         eventType = type
         return self
     }
 
     @discardableResult
-    func setFirstNotification(_ notification: EventNotification) -> EventBuilder {
+    public func setFirstNotification(_ notification: EventNotification) -> EventBuilder {
         firstNotification = notification
         return self
     }
 
     @discardableResult
-    func setSecondNotification(_ notification: EventNotification) -> EventBuilder {
+    public func setSecondNotification(_ notification: EventNotification) -> EventBuilder {
         secondNotification = notification
         return self
     }
 
-    func build() throws -> EventModel {
+    public func build() throws -> EventModel {
         guard startDate < endDate else {
             throw EventBuilderError.startDateAfterEndDate
         }
@@ -327,7 +327,7 @@ class EventBuilder {
         return event
     }
 
-    func notificationConfigCopy() -> EventModel {
+    public func notificationConfigCopy() -> EventModel {
         let event = EventModel(title: title, startDate: startDate, endDate: endDate, icon: icon, colorHex: colorHex)
         event.isAllDayEvent = isAllDayEvent
         event.isEnabled = isEnabled

@@ -5,14 +5,14 @@
 //  Created by ailu on 2024/5/6.
 //
 
+import ColorKit
 import Foundation
 import SwiftMovable
 import SwiftUI
-import ColorKit
 
-struct FontNameAndSize {
-    let fontName: String
-    let fontSize: CGFloat
+public struct FontNameAndSize {
+    public let fontName: String
+    public let fontSize: CGFloat
 }
 
 func getPreferredLocale() -> Locale {
@@ -23,7 +23,7 @@ func getPreferredLocale() -> Locale {
 }
 
 // 关于事件的信息
-enum EventInfoKind: Int, Codable, CaseIterable {
+public enum EventInfoKind: Int, Codable, CaseIterable {
     // 距离事件开始还有多少天
     case daysUntilEvent
     // 事件已经过去多少天
@@ -39,7 +39,7 @@ enum EventInfoKind: Int, Codable, CaseIterable {
     // 今天星期几
     case currentWeekDay
 
-    var description: LocalizedStringKey {
+    public var description: LocalizedStringKey {
         switch self {
         case .daysUntilEvent: return "距离目标日期还有多少天"
         case .eventStartDate: return "目标日期"
@@ -52,7 +52,7 @@ enum EventInfoKind: Int, Codable, CaseIterable {
     }
 
     // 根据阶段返回可用的 case
-    static func getAvailableCasesFor(kind: PhaseTimeKind) -> [EventInfoKind] {
+    public static func getAvailableCasesFor(kind: PhaseTimeKind) -> [EventInfoKind] {
         switch kind {
         case .taskStartDateBefore:
             return [.daysUntilEvent, .eventStartDate, .eventTitle, .currentWeekDay]
@@ -67,7 +67,7 @@ enum EventInfoKind: Int, Codable, CaseIterable {
         }
     }
 
-    var defaultFont: FontNameAndSize {
+    public var defaultFont: FontNameAndSize {
         switch self {
         case .daysUntilEvent:
             return FontNameAndSize(fontName: "", fontSize: 0)
@@ -93,26 +93,25 @@ enum EventInfoKind: Int, Codable, CaseIterable {
 }
 
 extension EventInfoKind: Identifiable {
-    var id: Self { self }
+    public var id: Self { self }
 }
 
 @Observable
-class EventInfo: MovableObject, Hashable {
-    static func == (lhs: EventInfo, rhs: EventInfo) -> Bool {
+public class EventInfo: MovableObject, Hashable {
+    public static func == (lhs: EventInfo, rhs: EventInfo) -> Bool {
         return lhs.id == rhs.id && lhs.pos == rhs.pos && lhs.rotationDegree == rhs.rotationDegree && lhs.zIndex == rhs.zIndex
 //        && lhs.scale == rhs.scale
     }
 
-    var eventInfoType: EventInfoKind
+    public var eventInfoType: EventInfoKind
 
 //    private var dateFormatPrefixPadding: String?
 
-    var fontName: String?
-    var fontSize: CGFloat = 20.0
-    var colorHex = "#2f261e"
+    public var fontName: String?
+    public var fontSize: CGFloat = 20.0
+    public var colorHex = "#2f261e"
 
-    var color: Color {
-
+    public var color: Color {
         return Color(uiColor: UIColor(hex: colorHex) ?? .clear)
     }
 
@@ -122,7 +121,7 @@ class EventInfo: MovableObject, Hashable {
         self.eventInfoProvider = eventInfoProvider
     }
 
-    func getEventInfoProvider() -> EventInfoProvider? {
+    public func getEventInfoProvider() -> EventInfoProvider? {
         eventInfoProvider
     }
 
@@ -130,13 +129,13 @@ class EventInfo: MovableObject, Hashable {
         case eventInfoType, event, fontName, fontSize, colorHex
     }
 
-    init(eventInfo: EventInfoKind,
-         eventInfoProvider: EventInfoProvider?,
-         position: CGPoint = .zero,
-         colorHex: String = "#2f261e",
-         rotationDegree: CGFloat = .zero,
-         fontName: String? = nil,
-         fontSize: CGFloat = 20.0) {
+    public init(eventInfo: EventInfoKind,
+                eventInfoProvider: EventInfoProvider?,
+                position: CGPoint = .zero,
+                colorHex: String = "#2f261e",
+                rotationDegree: CGFloat = .zero,
+                fontName: String? = nil,
+                fontSize: CGFloat = 20.0) {
         eventInfoType = eventInfo
         self.eventInfoProvider = eventInfoProvider
         self.fontName = fontName
@@ -154,7 +153,7 @@ class EventInfo: MovableObject, Hashable {
         try super.init(from: decoder)
     }
 
-    override func encode(to encoder: Encoder) throws {
+    override public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(eventInfoType, forKey: .eventInfoType)
         try container.encodeIfPresent(fontName, forKey: .fontName)
@@ -186,7 +185,7 @@ extension EventInfo {
 }
 
 extension EventInfo: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         return "\(eventInfoType.description) fontSize: \(fontSize)"
     }
 }
