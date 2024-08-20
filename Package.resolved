@@ -1,5 +1,5 @@
 {
-  "originHash" : "7cde05036cf38229b5bb817fa1719f5f9bf09ccdcc6a99cecb5db45fc1a96589",
+  "originHash" : "7fa44f78fb84d245c7692d18234598d5c08641a54d87a953cab23c8111569e4a",
   "pins" : [
     {
       "identity" : "colorkit",
@@ -70,7 +70,7 @@
       "location" : "https://github.com/ailu2533/SwiftMovable.git",
       "state" : {
         "branch" : "main",
-        "revision" : "d11b99a19070081716bf4585a0bbccbe703984cb"
+        "revision" : "85ec12fefe92a80315d3d16198919fc32fa5089c"
       }
     }
   ],
