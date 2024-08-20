@@ -20,7 +20,7 @@ public enum BackgroundKind: Int, CaseIterable, Codable, Identifiable {
         self
     }
 
-    var text: LocalizedStringKey {
+    public var text: LocalizedStringKey {
         switch self {
         case .morandiColors:
             return "莫兰迪色"

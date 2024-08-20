@@ -10,7 +10,7 @@ import LemonDateUtils
 // import LemonUtils
 import SwiftUI
 
-public enum PhaseTimeKind: Int, Codable, Comparable {
+public enum PhaseTimeKind: Int, Codable, CaseIterable, Comparable, Identifiable {
     // 事件开始日期前
     // 事件开始日期和事件开始具体时间之间
     // 事件中 任务开始具体时间和事件结束具体时间 之间
@@ -22,6 +22,10 @@ public enum PhaseTimeKind: Int, Codable, Comparable {
     case taskStartTimeAndEndTimeDuring = 3
     case endTimeAndTaskEndDateDuring = 4
     case taskEndDateAfter = 5
+
+    public var id: Int {
+        return rawValue
+    }
 
     public var text: String {
         switch self {
